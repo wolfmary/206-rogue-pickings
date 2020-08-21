@@ -47,6 +47,10 @@ p {
 	line-height: 1.3em;
 }
 
+ul {
+	margin: 0;
+}
+
 /*The widths are in a percentage!*/
 header {
 	display: flex;
@@ -57,7 +61,8 @@ header {
 }
 
 header h1 {
-	padding: 2em 0;
+	margin: 0;
+	padding: 1.5em 0;
 	border-bottom: 3px solid #77a466;
 	display: flex;
 	justify-content: center;
@@ -67,9 +72,6 @@ header h1 {
 header h1 span {
 	color: #77a466;
 	padding-right: .3em;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 header nav {
@@ -78,14 +80,20 @@ header nav {
 	justify-content: center;
 	align-items: center;
 }
+header nav ul {
+	margin: 0;
+	padding: 0;
+}
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: .875em;
+	list-style: none;
 	display: flex;
 	flex-basis: 100%;
 	justify-content: center;
 	align-items: center;
+	padding-right: 1.5em;
 	margin: 1.5em 0;
 }
 header nav ul li a{
@@ -181,4 +189,59 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 1em;
+}
+
+@media all and (min-width:768px) {
+	/* tablet styles here */
+
+	.bottom-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		width: 100%;
+		flex-flow: row wrap;
+		border-top: 1px solid #eee;
+	}
+
+	.section-one,
+	.section-two,
+	.section-three {
+		display: flex;
+		justify-content: flex-start;
+		align-items: stretch;
+		flex-flow: row wrap;
+		flex-basis: 30%;
+		border-top: none;
+	}
+
+	.section-two {
+		border-left: 1px solid #eee;
+		border-right:1px solid #eee;
+		padding: 0 3%;
+	}
+
+}
+
+@media all and (min-width:1200px) {
+	/* desktop styles here */
+
+	header {
+		justify-content: space-between;
+	}
+
+header nav {
+		flex-basis: auto;
+}
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+		flex-basis: auto;
+	}
+
+	header h1 {
+		border-bottom: none;
+		flex-basis: auto;
+	}
+
 }
